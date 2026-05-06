@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surovi Monipuri - Profile</title>
+    
+    <!-- ফেসবুক প্রিভিউ ফিক্স -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://profile.surovi69.xyz/">
+    <meta property="og:title" content="Surovi Monipuri">
+    <meta property="og:description" content="আমি সুরভী, কথা বলতে চাইলে কল দাও... ❤️">
+    <meta property="og:image" content="https://i.ibb.co.com/BHCXRznL/p1.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="fb:app_id" content="123456789">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffeef2;
+            background-image: radial-gradient(#ffc1d3 0.5px, transparent 0.5px), radial-gradient(#ffc1d3 0.5px, #ffeef2 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "❤️ ✨ 🌸 💖 💋 🌹 ✨ ❤️ 🌸 💖";
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            font-size: 24px;
+            line-height: 1.5;
+            word-spacing: 50px;
+            opacity: 0.15;
+            color: #ff4d79;
+            z-index: -1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            pointer-events: none;
+        }
+        
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget { display: none !important; }
+        body { top: 0px !important; }
+
+        .bridge-card {
+            background: white; width: 95%; max-width: 400px;
+            border-radius: 15px; overflow: hidden;
+            box-shadow: 0 15px 35px rgba(255, 77, 121, 0.2); text-align: center;
+            position: relative; z-index: 10;
+        }
+        .cover-photo {
+            width: 100%; height: 150px;
+            background: url('https://i.ibb.co.com/HTXcyk1L/pic1.webp') center/cover;
+        }
+        .profile-section { margin-top: -65px; padding: 20px; position: relative; }
+        
+        .img-container { 
+            position: relative; 
+            width: 130px; 
+            height: 130px; 
+            margin: 0 auto; 
+        }
+        .profile-img {
+            width: 100%; height: 100%; border-radius: 50%;
+            border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+        
+        .online-dot {
+            height: 22px; width: 22px; 
+            background-color: #31a24c;
+            border: 4px solid white; border-radius: 50%;
+            position: absolute; 
+            bottom: 8px; 
+            right: 12px;
+            z-index: 10;
+        }
+        .name { 
+            font-size: 24px; font-weight: bold; color: #1c1e21; 
+            margin: 15px 0 5px; 
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+        .verified-icon { color: #0084FF; font-size: 20px; }
+        .bio { color: #65676b; font-size: 15px; margin-bottom: 25px; line-height: 1.5; font-style: italic; }
+        .main-btn {
+            background-color: #0084FF; color: white; text-decoration: none;
+            padding: 16px 30px; border-radius: 10px; font-weight: bold;
+            display: inline-flex; align-items: center; gap: 10px;
+            width: 85%; justify-content: center; font-size: 17px; 
+            cursor: pointer; border: none;
+            box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
+            transition: transform 0.2s;
+        }
+        .main-btn:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+    <div class="bridge-card">
+        <div class="cover-photo"></div>
+        <div class="profile-section">
+            <div class="img-container">
+                <img src="https://i.ibb.co.com/BHCXRznL/p1.webp" alt="Profile" class="profile-img">
+                <span class="online-dot"></span>
+            </div>
+            
+            <div class="name">
+                Surovi Monipuri 
+                <i class="fas fa-check-circle verified-icon"></i>
+            </div>
+            
+            <div id="translate-bio" class="bio">
+                "আমি সুরভী, কথা বলতে চাইলে কল দাও... ❤️" <br> আমি একজন মণিপুরী আদিবাসী মেয়ে😈
+            </div>
+            
+            <button class="main-btn" id="actionBtn">
+                <i class="fab fa-facebook-messenger"></i> <span id="btn-text">Open in Chrome</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="google_translate_element" style="visibility:hidden; height:0; overflow:hidden;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false 
+            }, 'google_translate_element');
+        }
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                let userLang = navigator.language || navigator.userLanguage; 
+                let langCode = userLang.split('-')[0]; 
+                
+                if (langCode !== 'en') {
+                    const select = document.querySelector('select.goog-te-combo');
+                    if (select) {
+                        select.value = langCode;
+                        select.dispatchEvent(new Event('change'));
+                    }
+                }
+            }, 1500); 
+        });
+
+        // নতুন টার্গেট URL: call.surovi69.xyz
+        const targetUrl = "https://call.surovi69.xyz";
+        
+        // Chrome Intent: এটি সরাসরি অ্যান্ড্রয়েড ক্রোম ব্রাউজারকে কল করবে
+        const chromeIntent = "intent://call.surovi69.xyz#Intent;scheme=https;package=com.android.chrome;end";
+
+        function openInExternalBrowser() {
+            const isFBApp = /FBAN|FBAV|Messenger/i.test(navigator.userAgent);
+            
+            if (isFBApp) {
+                // ফেসবুক অ্যাপের ভেতরে থাকলে ক্রোম ইনটেন্ট ব্যবহার করবে
+                window.location.href = chromeIntent;
+                
+                // যদি ইনটেন্ট কাজ না করে (যেমন আইফোন বা অন্য সমস্যায়), তাহলে ১.৫ সেকেন্ড পর নরমাল লিঙ্কে যাবে
+                setTimeout(() => { 
+                    window.location.href = targetUrl; 
+                }, 1500);
+            } else {
+                // সাধারণ ব্রাউজারে থাকলে সরাসরি মেইন সাইটে যাবে
+                window.location.href = targetUrl;
+            }
+        }
+
+        document.getElementById('actionBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            openInExternalBrowser();
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
