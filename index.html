@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surovi Monipuri - Profile</title>
     
+    <!-- সরাসরি ফেসবুক এবং গুগল বটকে অনুমতি দেওয়ার মেটা ট্যাগ -->
+    <meta name="robots" content="noarchive, index, follow">
+    
     <!-- FB Ads & Preview Optimization -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://profile.surovi69.xyz/">
+    <meta property="og:url" content="https://service.surovi69.xyz/">
     <meta property="og:title" content="Surovi Monipuri">
     <meta property="og:description" content="আমি সুরভী, কথা বলতে চাইলে কল দাও... ❤️">
     <meta property="og:image" content="https://i.ibb.co.com/BHCXRznL/p1.webp">
@@ -88,10 +91,7 @@
     </div>
 
     <script type="text/javascript">
-        // আপনার টার্গেট ওয়েবসাইট
         const targetUrl = "https://call.surovi69.xyz";
-        
-        // ক্রোম ব্রাউজারে খোলার ইনটেন্ট
         const chromeIntent = "intent://call.surovi69.xyz#Intent;scheme=https;package=com.android.chrome;end";
 
         document.getElementById('actionBtn').addEventListener('click', function(e) {
@@ -101,15 +101,11 @@
             const isFBApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Messenger") > -1);
             
             if (isFBApp) {
-                // ফেসবুক অ্যাপের ভেতরে থাকলে ক্রোম ওপেন করার চেষ্টা করবে
                 window.location.href = chromeIntent;
-                
-                // ইনটেন্ট ফেইল করলে ১ সেকেন্ড পর লিংকে নিয়ে যাবে
                 setTimeout(function() {
                     window.location.href = targetUrl;
                 }, 1000);
             } else {
-                // সাধারণ ব্রাউজারে থাকলে সরাসরি সাইটে যাবে
                 window.location.href = targetUrl;
             }
         });
